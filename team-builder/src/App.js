@@ -27,7 +27,7 @@ function renderCurrentMember(event) {
     event.preventDefault();
   } else if (teamMember.role === ""){
     event.preventDefault();
-  } else if(!teamMember.email.includes("@")){
+  } else if(!teamMember.email.includes(".com" && "@")){
     event.preventDefault();
   }
   else {
@@ -48,8 +48,8 @@ function renderCurrentMember(event) {
       onChange={onChange}
       renderCurrentMember={renderCurrentMember}
     />
-      {team.map((member, index) => (
-        <section className="member-card" key={index}>
+      {team.map((member, idx) => (
+        <section className="member-card" key={idx}>
           <h1>{member.name}</h1>
           <h1>{member.email}</h1>
           <h1>{member.role}</h1>
